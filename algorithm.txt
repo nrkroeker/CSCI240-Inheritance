@@ -4,4 +4,26 @@ Nathalie Kroeker
 CSCI 24000
 Assignment 5 Algorithm
 
-Goal:
+Goal: Read employee information from a file and calculate their paychecks based off of inputted hours
+
+Input: A file of employee data, menu selections, and a number of hours worked
+Output: Menu options, employee data sorted into neat columns, and calculated paychecks
+
+Requirements: 
+	- Method to read in data from a file
+	- Function to calculate pay, given an employee position
+	- Menu to guide user input
+
+Feedback: 
+	- Collecting user input
+	- Looping mechanisms 
+	- Sort printed employee data
+
+Step-by-Step:
+1. Present menu allowing user to load employees from a file or quit the program
+2. On selecting the first option, the program will read in employee data from a file and sort it into objects
+3. A new menu appears, permitting the user to print employee data, input hours worked, and calculate paychecks
+4. Print employee data will display in the console everything in an employee object
+5. User can input the amount of hours employees have worked
+6. Once they've done that, the user can have the program calculate the paychecks for each employee
+7. Then the user can exit the program
