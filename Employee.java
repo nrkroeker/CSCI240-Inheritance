@@ -7,6 +7,10 @@ public class Employee {
 	private String jobId;
 	private String employeeId;
 
+	Employee() {
+
+	}
+
 	public String getFirstName() {
 		return firstName;
 	}
@@ -39,5 +43,5 @@ public class Employee {
 		employeeId = newEmployeeId;
 	}
 
-
+	// public void printInfo
 }

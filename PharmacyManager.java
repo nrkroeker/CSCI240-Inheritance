@@ -3,9 +3,27 @@
 public class PharmacyManager extends Employee {
 
   private double paycheck;
+  private double payRate;
 
-  public double getPaycheck(int hours) {
-    paycheck = 50.0 * hours;
+  // Constructors
+  PharmacyManager() {
+    payRate = 50.0;
+    super.setJobId("1");
+  }
+
+  PharmacyManager(String employeeIdIn, String firstNameIn, String lastNameIn) {
+    payRate = 50.0;
+    super.setJobId("1");
+    super.setEmployeeId(employeeIdIn);
+    super.setFirstName(firstNameIn);
+    super.setLastName(lastNameIn);
+  }
+
+  public void setPaycheck(int hours) {
+    paycheck = payRate * hours;
+  }
+
+  public double getPaycheck() {
     return paycheck;
   }
 }

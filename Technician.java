@@ -3,9 +3,27 @@
 public class Technician extends Employee {
 
   private double paycheck;
+  private double payRate;
 
-  public double getPaycheck(int hours) {
-    paycheck = 20.0 * hours;
+  // Constructors
+  Technician() {
+    payRate = 20.0;
+    super.setJobId("3");
+  }
+
+  Technician(String employeeIdIn, String firstNameIn, String lastNameIn) {
+    payRate = 20.0;
+    super.setJobId("3");
+    super.setEmployeeId(employeeIdIn);
+    super.setFirstName(firstNameIn);
+    super.setLastName(lastNameIn);
+  }
+
+  public void setPaycheck(int hours) {
+    paycheck = payRate * hours;
+  }
+
+  public double getPaycheck() {
     return paycheck;
   }
 }
