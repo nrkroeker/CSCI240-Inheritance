@@ -6,6 +6,7 @@ import java.io.*;
 public class Driver {
   public Employee [] employees = new Employee[4];
   public int menuInput;
+  public int hoursWorked = 0;
 
   public void print(String phrase) {
     System.out.print(phrase);
@@ -29,6 +30,7 @@ public class Driver {
 
       if (menuInput == 1) {
         readFile();
+        print("\nEmployees loaded from file\n");
         keepGoing = false;
       } else if (menuInput == 2) {
         print("Exiting...");
@@ -81,16 +83,21 @@ public class Driver {
         if (line != null) {
           employeeInfo = line.split(delims);
 
-          if (employeeInfo[0] == "1") {
-            employees[num] = new PharmacyManager(employeeInfo[1], employeeInfo[2], employeeInfo[3]);
-          } else if (employeeInfo[0] == "2") {
-            employees[num] = new Pharmacist(employeeInfo[1], employeeInfo[2], employeeInfo[3]);
-          } else if (employeeInfo[0] == "3") {
-            employees[num] = new Technician(employeeInfo[1], employeeInfo[2], employeeInfo[3]);
-          } else if (employeeInfo[0] == "4") {
-            employees[num] = new SeniorTechnician(employeeInfo[1], employeeInfo[2], employeeInfo[3]);
+          if (employeeInfo[0].charAt(0) == '1') {
+            Employee employee = new PharmacyManager(employeeInfo[1], employeeInfo[2], employeeInfo[3]);
+            employees[num] = employee;
+          } else if (employeeInfo[0].charAt(0) == '2') {
+            Employee employee = new Pharmacist(employeeInfo[1], employeeInfo[2], employeeInfo[3]);
+            employees[num] = employee;
+          } else if (employeeInfo[0].charAt(0) == '3') {
+            Employee employee = new Technician(employeeInfo[1], employeeInfo[2], employeeInfo[3]);
+            employees[num] = employee;
+          } else if (employeeInfo[0].charAt(0) == '4') {
+            Employee employee = new SeniorTechnician(employeeInfo[1], employeeInfo[2], employeeInfo[3]);
+            employees[num] = employee;
+          } else {
+            print("Here's the error");
           }
-
           num++;
         }
       }
@@ -105,9 +112,16 @@ public class Driver {
 
   public void printInfo() {
     for (int i = 0; i < 4; i++) {
-      Employee employee = new Employee();
-      employee = employees[i];
-      print(employee.getLastName());
+      Employee employee = employees[i];
+      if(employee.getJobId() == "1") {
+        ((PharmacyManager)employee).printEmployee();
+      } else if(employee.getJobId() == "2") {
+        ((Pharmacist)employee).printEmployee();
+      } else if(employee.getJobId() == "3") {
+        ((Technician)employee).printEmployee();
+      } else if(employee.getJobId() == "1") {
+        ((SeniorTechnician)employee).printEmployee();
+      }
     }
   }
 
@@ -115,11 +129,30 @@ public class Driver {
     print("\nPlease enter the hours worked > ");
 
     Scanner scan = new Scanner(System.in);
-    menuInput = scan.nextInt();
+    hoursWorked = scan.nextInt();
 
   }
 
   public void printPaychecks() {
-
+    if (hoursWorked == 0) {
+      print("\nYou must enter the hours before calculating paycheck!\n");
+    } else {
+      for (int i = 0; i < 4; i++) {
+        Employee employee = employees[i];
+        if(employee.getJobId() == "1") {
+          ((PharmacyManager)employee).setPaycheck(hoursWorked);
+          ((PharmacyManager)employee).printPaycheck();
+        } else if(employee.getJobId() == "2") {
+          ((Pharmacist)employee).setPaycheck(hoursWorked);
+          ((Pharmacist)employee).printPaycheck();
+        } else if(employee.getJobId() == "3") {
+          ((Technician)employee).setPaycheck(hoursWorked);
+          ((Technician)employee).printPaycheck();
+        } else if(employee.getJobId() == "1") {
+          ((SeniorTechnician)employee).setPaycheck(hoursWorked);
+          ((SeniorTechnician)employee).printPaycheck();
+        }
+      }
+    }
   }
 }

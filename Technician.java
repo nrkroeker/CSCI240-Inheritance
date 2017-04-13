@@ -26,4 +26,16 @@ public class Technician extends Employee {
   public double getPaycheck() {
     return paycheck;
   }
+
+  public double getPayRate() {
+    return payRate;
+  }
+
+  public void printEmployee() {
+    System.out.println("\nID: " + super.getEmployeeId() + "\tName: " + super.getFirstName() + " " + super.getLastName() + "\tRate: " + getPayRate());
+  }
+
+  public void printPaycheck() {
+    System.out.println("\nID: " + super.getEmployeeId() + "\tCheck Amount: $" + getPaycheck());
+  }
 }
