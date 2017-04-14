@@ -2,8 +2,6 @@
 
 public class Pharmacist extends Employee {
 
-  private double paycheck;
-
   // Constructors
   Pharmacist() {
     super.setPayRate(40.0);
