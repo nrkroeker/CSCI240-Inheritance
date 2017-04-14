@@ -2,34 +2,22 @@
 
 public class PharmacyManager extends Employee {
 
-  private double paycheck;
-
   // Constructors
   PharmacyManager() {
     super.setPayRate(50.0);
     super.setJobId("1");
+    super.setJobTitle("Pharmacy Manager");
+    super.setJobDescription("Manages the pharmacists and makes the schedule.\t");
   }
 
   PharmacyManager(String employeeIdIn, String firstNameIn, String lastNameIn) {
     super.setPayRate(50.0);
     super.setJobId("1");
+    super.setJobTitle("Pharmacy Manager");
+    super.setJobDescription("Manages the pharmacists and makes the schedule.");
     super.setEmployeeId(employeeIdIn);
     super.setFirstName(firstNameIn);
     super.setLastName(lastNameIn);
-  }
-
-  // Getters and setters
-  public void setPaycheck(int hours) {
-    paycheck = super.getPayRate() * hours;
-  }
-
-  public double getPaycheck() {
-    return paycheck;
-  }
-
-  // Print paycheck
-  public void printPaycheck() {
-    System.out.println("ID: " + super.getEmployeeId() + "\tCheck Amount: $" + getPaycheck());
   }
 
 }
