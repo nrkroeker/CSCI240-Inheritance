@@ -3,36 +3,35 @@
 public class Technician extends Employee {
 
   private double paycheck;
-  private double payRate;
 
   // Constructors
   Technician() {
-    payRate = 20.0;
+    super.setPayRate(20.0);
     super.setJobId("3");
   }
 
   Technician(String employeeIdIn, String firstNameIn, String lastNameIn) {
-    payRate = 20.0;
+    super.setPayRate(20.0);
     super.setJobId("3");
     super.setEmployeeId(employeeIdIn);
     super.setFirstName(firstNameIn);
     super.setLastName(lastNameIn);
   }
 
+  // Getters and setters
   public void setPaycheck(int hours) {
-    paycheck = payRate * hours;
+    paycheck = super.getPayRate() * hours;
   }
 
   public double getPaycheck() {
     return paycheck;
   }
 
-  public double getPayRate() {
-    return payRate;
-  }
 
+
+  // Functions to print employee info
   public void printEmployee() {
-    System.out.println("\nID: " + super.getEmployeeId() + "\tName: " + super.getFirstName() + " " + super.getLastName() + "\tRate: " + getPayRate());
+    System.out.println("\nID: " + super.getEmployeeId() + "\tName: " + super.getFirstName() + " " + super.getLastName() + "\tRate: " + super.getPayRate());
   }
 
   public void printPaycheck() {

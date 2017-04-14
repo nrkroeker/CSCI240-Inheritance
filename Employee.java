@@ -6,11 +6,13 @@ public class Employee {
 	private String lastName;
 	private String jobId;
 	private String employeeId;
+	private double payRate;
 
 	Employee() {
 
 	}
 
+	// Getters and setters
 	public String getFirstName() {
 		return firstName;
 	}
@@ -25,6 +27,10 @@ public class Employee {
 
 	public String getEmployeeId() {
 		return employeeId;
+	}
+
+	public double getPayRate() {
+		return payRate;
 	}
 
 	public void setFirstName(String newFirstName) {
@@ -43,5 +49,8 @@ public class Employee {
 		employeeId = newEmployeeId;
 	}
 
+	public void setPayRate(double newPayRate) {
+		payRate = newPayRate;
+	}
 	// public void printInfo
 }

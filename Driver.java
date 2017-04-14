@@ -4,23 +4,28 @@ import java.io.*;
 
 
 public class Driver {
+  // Declare variables
   public Employee [] employees = new Employee[4];
   public int menuInput;
   public int hoursWorked = 0;
 
+  // Function for easy printing
   public void print(String phrase) {
     System.out.print(phrase);
   }
 
+  // Initialization function
   public static void main(String [] args) {
     // Instantiate driver and run menu
     Driver driver = new Driver();
     driver.menu();
   }
 
+  // Menus setup
   public void menu() {
     boolean keepGoing = true;
 
+    // Menu options
     while(keepGoing) {
       // Display menu options and recieve user choice
       print("1. Load employees from file \n2. Exit program \nPlease enter your selection > ");
@@ -40,6 +45,7 @@ public class Driver {
       }
     }
 
+    // Next menu
     keepGoing = true;
     while(keepGoing) {
       print("\n1. Print employee information \n2. Enter hours worked \n3. Calculate paychecks \n4. Exit program \nPlease enter your selection > ");
@@ -62,6 +68,7 @@ public class Driver {
     }
   }
 
+  // Function to read the data in from the file
   public void readFile() {
     String line = "";
     String delims = "[,]";
@@ -77,7 +84,7 @@ public class Driver {
 			BufferedReader buffer = new BufferedReader(reader);
 			buffer.readLine();
 
-			// Check each line and make student option
+			// Check each line and make objects
  			while(line != null) {
 				line = buffer.readLine();
         if (line != null) {
@@ -110,6 +117,7 @@ public class Driver {
 
   }
 
+  // For each object in the array, check the jobId and print the info
   public void printInfo() {
     for (int i = 0; i < 4; i++) {
       Employee employee = employees[i];
@@ -126,6 +134,7 @@ public class Driver {
   }
 
   public void submitHours() {
+    // Recieve input of the hours worked
     print("\nPlease enter the hours worked > ");
 
     Scanner scan = new Scanner(System.in);
@@ -133,6 +142,7 @@ public class Driver {
 
   }
 
+  // Check job id and print the paychecks
   public void printPaychecks() {
     if (hoursWorked == 0) {
       print("\nYou must enter the hours before calculating paycheck!\n");

@@ -3,36 +3,33 @@
 public class PharmacyManager extends Employee {
 
   private double paycheck;
-  private double payRate;
 
   // Constructors
   PharmacyManager() {
-    payRate = 50.0;
+    super.setPayRate(50.0);
     super.setJobId("1");
   }
 
   PharmacyManager(String employeeIdIn, String firstNameIn, String lastNameIn) {
-    payRate = 50.0;
+    super.setPayRate(50.0);
     super.setJobId("1");
     super.setEmployeeId(employeeIdIn);
     super.setFirstName(firstNameIn);
     super.setLastName(lastNameIn);
   }
 
+  // Getters and setters
   public void setPaycheck(int hours) {
-    paycheck = payRate * hours;
+    paycheck = super.getPayRate() * hours;
   }
 
   public double getPaycheck() {
     return paycheck;
   }
 
-  public double getPayRate() {
-    return payRate;
-  }
-
+  // Functions to print the information
   public void printEmployee() {
-    System.out.println("\nID: " + super.getEmployeeId() + "\tName: " + super.getFirstName() + " " + super.getLastName() + "\tRate: " + getPayRate());
+    System.out.println("\nID: " + super.getEmployeeId() + "\tName: " + super.getFirstName() + " " + super.getLastName() + "\tRate: " + super.getPayRate());
   }
 
   public void printPaycheck() {
