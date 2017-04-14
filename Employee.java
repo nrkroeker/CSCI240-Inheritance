@@ -71,6 +71,6 @@ public class Employee {
 	}
 
 	public void printPaycheck() {
-		System.out.println("z1ID: " + employeeId + "\tCheck Amount: $" + paycheck);
+		System.out.println("ID: " + employeeId + "\tCheck Amount: $" + paycheck);
 	}
 }
