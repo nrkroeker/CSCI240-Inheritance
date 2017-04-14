@@ -29,7 +29,7 @@ public class Technician extends Employee {
 
   // Print paycheck
   public void printPaycheck() {
-    System.out.println("ID: " + super.getEmployeeId() + "\tCheck Amount: $" + getPaycheck());
+    System.out.println("z1ID: " + super.getEmployeeId() + "\tCheck Amount: $" + getPaycheck());
   }
 
 }

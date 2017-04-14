@@ -6,7 +6,7 @@ import java.io.*;
 public class Driver {
   // Declare variables
   public Employee [] employees = new Employee[4];
-  public int menuInput;
+  public char menuInput;
   public int hoursWorked = 0;
 
   // Function for easy printing
@@ -28,16 +28,16 @@ public class Driver {
     // Menu options
     while(keepGoing) {
       // Display menu options and recieve user choice
-      print("1. Load employees from file \n2. Exit program \nPlease enter your selection > ");
+      print("\n1. Load employees from file \n2. Exit program \nPlease enter your selection > ");
 
       Scanner scan = new Scanner(System.in);
-      menuInput = scan.nextInt();
+      menuInput = scan.next().charAt(0);
 
-      if (menuInput == 1) {
+      if (menuInput == '1') {
         readFile();
         print("\nEmployees loaded from file\n");
         keepGoing = false;
-      } else if (menuInput == 2) {
+      } else if (menuInput == '2') {
         print("Exiting...");
         keepGoing = false;
       } else {
@@ -51,15 +51,15 @@ public class Driver {
       print("\n1. Print employee information \n2. Enter hours worked \n3. Calculate paychecks \n4. Exit program \nPlease enter your selection > ");
 
       Scanner scan = new Scanner(System.in);
-      menuInput = scan.nextInt();
+      menuInput = scan.next().charAt(0);
 
-      if (menuInput == 1) {
+      if (menuInput == '1') {
         printInfo();
-      } else if (menuInput == 2) {
+      } else if (menuInput == '2') {
         submitHours();
-      } else if (menuInput == 3) {
+      } else if (menuInput == '3') {
         printPaychecks();
-      } else if (menuInput == 4) {
+      } else if (menuInput == '4') {
         print("Exiting...");
         keepGoing = false;
       } else {
@@ -108,7 +108,7 @@ public class Driver {
           num++;
         }
       }
-      
+
       buffer.close();
 
       // Check for errors
