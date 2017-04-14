@@ -1,18 +1,18 @@
 // Honor Pledge: I pledge that I have neither given nor received any help on this assignment
 
-public class Technician extends Employee {
+public class Pharmacist extends Employee {
 
   private double paycheck;
 
   // Constructors
-  Technician() {
-    super.setPayRate(20.0);
-    super.setJobId("3");
+  Pharmacist() {
+    super.setPayRate(40.0);
+    super.setJobId("2");
   }
 
-  Technician(String employeeIdIn, String firstNameIn, String lastNameIn) {
-    super.setPayRate(20.0);
-    super.setJobId("3");
+  Pharmacist(String employeeIdIn, String firstNameIn, String lastNameIn) {
+    super.setPayRate(40.0);
+    super.setJobId("2");
     super.setEmployeeId(employeeIdIn);
     super.setFirstName(firstNameIn);
     super.setLastName(lastNameIn);
@@ -29,7 +29,6 @@ public class Technician extends Employee {
 
   // Print paycheck
   public void printPaycheck() {
-    System.out.println("z1ID: " + super.getEmployeeId() + "\tCheck Amount: $" + getPaycheck());
+    System.out.println("ID: " + super.getEmployeeId() + "\tCheck Amount: $" + getPaycheck());
   }
-
 }
