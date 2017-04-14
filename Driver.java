@@ -108,6 +108,7 @@ public class Driver {
           num++;
         }
       }
+      
       buffer.close();
 
       // Check for errors
@@ -119,6 +120,7 @@ public class Driver {
 
   // For each object in the array, check the jobId and print the info
   public void printInfo() {
+    print("\n");
     for (int i = 0; i < 4; i++) {
       Employee employee = employees[i];
       if(employee.getJobId() == "1") {
@@ -127,7 +129,7 @@ public class Driver {
         ((Pharmacist)employee).printEmployee();
       } else if(employee.getJobId() == "3") {
         ((Technician)employee).printEmployee();
-      } else if(employee.getJobId() == "1") {
+      } else if(employee.getJobId() == "4") {
         ((SeniorTechnician)employee).printEmployee();
       }
     }
@@ -147,6 +149,7 @@ public class Driver {
     if (hoursWorked == 0) {
       print("\nYou must enter the hours before calculating paycheck!\n");
     } else {
+      print("\n");
       for (int i = 0; i < 4; i++) {
         Employee employee = employees[i];
         if(employee.getJobId() == "1") {
@@ -158,7 +161,7 @@ public class Driver {
         } else if(employee.getJobId() == "3") {
           ((Technician)employee).setPaycheck(hoursWorked);
           ((Technician)employee).printPaycheck();
-        } else if(employee.getJobId() == "1") {
+        } else if(employee.getJobId() == "4") {
           ((SeniorTechnician)employee).setPaycheck(hoursWorked);
           ((SeniorTechnician)employee).printPaycheck();
         }

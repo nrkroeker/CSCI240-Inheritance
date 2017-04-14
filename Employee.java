@@ -52,5 +52,8 @@ public class Employee {
 	public void setPayRate(double newPayRate) {
 		payRate = newPayRate;
 	}
-	// public void printInfo
+
+	public void printEmployee() {
+		System.out.println("ID: " + getEmployeeId() + "\tName: " + getFirstName() + " " + getLastName() + "\tRate: " + getPayRate());
+	}
 }

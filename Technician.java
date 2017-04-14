@@ -27,14 +27,9 @@ public class Technician extends Employee {
     return paycheck;
   }
 
-
-
-  // Functions to print employee info
-  public void printEmployee() {
-    System.out.println("\nID: " + super.getEmployeeId() + "\tName: " + super.getFirstName() + " " + super.getLastName() + "\tRate: " + super.getPayRate());
-  }
-
+  // Print paycheck
   public void printPaycheck() {
-    System.out.println("\nID: " + super.getEmployeeId() + "\tCheck Amount: $" + getPaycheck());
+    System.out.println("ID: " + super.getEmployeeId() + "\tCheck Amount: $" + getPaycheck());
   }
+
 }

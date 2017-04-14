@@ -27,12 +27,9 @@ public class PharmacyManager extends Employee {
     return paycheck;
   }
 
-  // Functions to print the information
-  public void printEmployee() {
-    System.out.println("\nID: " + super.getEmployeeId() + "\tName: " + super.getFirstName() + " " + super.getLastName() + "\tRate: " + super.getPayRate());
+  // Print paycheck
+  public void printPaycheck() {
+    System.out.println("ID: " + super.getEmployeeId() + "\tCheck Amount: $" + getPaycheck());
   }
 
-  public void printPaycheck() {
-    System.out.println("\nID: " + super.getEmployeeId() + "\tCheck Amount: $" + getPaycheck());
-  }
 }
