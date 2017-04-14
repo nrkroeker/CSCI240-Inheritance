@@ -7,6 +7,7 @@ public class Employee {
 	private String jobId;
 	private String employeeId;
 	private double payRate;
+	private double paycheck;
 
 	Employee() {
 
@@ -33,6 +34,12 @@ public class Employee {
 		return payRate;
 	}
 
+	public double getPaycheck() {
+		return paycheck;
+	}
+
+	//====================================================================//
+
 	public void setFirstName(String newFirstName) {
 		firstName = newFirstName;
 	}
@@ -53,7 +60,17 @@ public class Employee {
 		payRate = newPayRate;
 	}
 
+	public void setPaycheck(int hours) {
+    paycheck = payRate * hours;
+  }
+
+	//====================================================================//
+
 	public void printEmployee() {
-		System.out.println("ID: " + getEmployeeId() + "\tName: " + getFirstName() + " " + getLastName() + "\tRate: " + getPayRate());
+		System.out.println("ID: " + employeeId + "\tName: " + firstName + " " + lastName + "\tRate: " + payRate);
+	}
+
+	public void printPaycheck() {
+		System.out.println("z1ID: " + employeeId + "\tCheck Amount: $" + paycheck);
 	}
 }

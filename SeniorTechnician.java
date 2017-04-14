@@ -2,8 +2,6 @@
 
 public class SeniorTechnician extends Employee {
 
-  private double paycheck;
-
   // Constructors
   SeniorTechnician() {
     super.setPayRate(25.0);
@@ -17,19 +15,5 @@ public class SeniorTechnician extends Employee {
     super.setFirstName(firstNameIn);
     super.setLastName(lastNameIn);
   }
-
-  // Getters and setters
-  public void setPaycheck(int hours) {
-    paycheck = super.getPayRate() * hours;
-  }
-
-  public double getPaycheck() {
-    return paycheck;
-  }
-
-  // Print paycheck
-  public void printPaycheck() {
-    System.out.println("ID: " + super.getEmployeeId() + "\tCheck Amount: $" + getPaycheck());
-  }
-
+  
 }

@@ -18,17 +18,4 @@ public class Pharmacist extends Employee {
     super.setLastName(lastNameIn);
   }
 
-  // Getters and setters
-  public void setPaycheck(int hours) {
-    paycheck = super.getPayRate() * hours;
-  }
-
-  public double getPaycheck() {
-    return paycheck;
-  }
-
-  // Print paycheck
-  public void printPaycheck() {
-    System.out.println("ID: " + super.getEmployeeId() + "\tCheck Amount: $" + getPaycheck());
-  }
 }
