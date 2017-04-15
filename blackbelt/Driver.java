@@ -5,7 +5,7 @@ import java.io.*;
 
 public class Driver {
   // Declare variables
-  public Employee [] employees = new Employee[4];
+  ArrayList<Employee> employees = new ArrayList<Employee>();
   public char menuInput;
   String hours;
   int hoursWorked;
@@ -93,16 +93,16 @@ public class Driver {
 
           if (employeeInfo[0].charAt(0) == '1') {
             Employee employee = new PharmacyManager(employeeInfo[1], employeeInfo[2], employeeInfo[3]);
-            employees[num] = employee;
+            employees.add(employee);
           } else if (employeeInfo[0].charAt(0) == '2') {
             Employee employee = new Pharmacist(employeeInfo[1], employeeInfo[2], employeeInfo[3]);
-            employees[num] = employee;
+            employees.add(employee);
           } else if (employeeInfo[0].charAt(0) == '3') {
             Employee employee = new Technician(employeeInfo[1], employeeInfo[2], employeeInfo[3]);
-            employees[num] = employee;
+            employees.add(employee);
           } else if (employeeInfo[0].charAt(0) == '4') {
             Employee employee = new SeniorTechnician(employeeInfo[1], employeeInfo[2], employeeInfo[3]);
-            employees[num] = employee;
+            employees.add(employee);
           } else {
             print("Here's the error");
           }
@@ -122,8 +122,9 @@ public class Driver {
   // For each object in the array, check the jobId and print the info
   public void printInfo() {
     print("\n");
-    for (int i = 0; i < 4; i++) {
-      Employee employee = employees[i];
+    int employeesNum = employees.size();
+    for (int i = 0; i < employeesNum; i++) {
+      Employee employee = employees.get(i);
       employee.printEmployee();
     }
   }
@@ -133,9 +134,9 @@ public class Driver {
 
     // Recieve input of the hours worked
     Scanner scan = new Scanner(System.in);
-
-    for (int i = 0; i < 4; i++) {
-      Employee employee = employees[i];
+    int employeesNum = employees.size();
+    for (int i = 0; i < employeesNum; i++) {
+      Employee employee = employees.get(i);
       keepGoing = true;
 
       while(keepGoing) {
@@ -160,8 +161,9 @@ public class Driver {
       print("\nYou must enter the hours before calculating paycheck!\n");
     } else {
       print("\n");
-      for (int i = 0; i < 4; i++) {
-        Employee employee = employees[i];
+      int employeesNum = employees.size();
+      for (int i = 0; i < employeesNum; i++) {
+        Employee employee = employees.get(i);
         employee.setPaycheck();
         employee.printPaycheck();
       }
