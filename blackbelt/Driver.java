@@ -7,7 +7,6 @@ public class Driver {
   // Declare variables
   public Employee [] employees = new Employee[4];
   public char menuInput;
-  public int hoursWorked = 0;
 
   // Function for easy printing
   public void print(String phrase) {
@@ -123,24 +122,32 @@ public class Driver {
     print("\n");
     for (int i = 0; i < 4; i++) {
       Employee employee = employees[i];
-      if(employee.getJobId() == "1") {
-        ((PharmacyManager)employee).printEmployee();
-      } else if(employee.getJobId() == "2") {
-        ((Pharmacist)employee).printEmployee();
-      } else if(employee.getJobId() == "3") {
-        ((Technician)employee).printEmployee();
-      } else if(employee.getJobId() == "4") {
-        ((SeniorTechnician)employee).printEmployee();
-      }
+      employee.printEmployee();
     }
   }
 
   public void submitHours() {
+    String hours;
+    boolean keepGoing = true;
     // Recieve input of the hours worked
-    print("\nPlease enter the hours worked > ");
-
     Scanner scan = new Scanner(System.in);
-    hoursWorked = scan.nextInt();
+
+    for (int i = 0; i < 4; i++) {
+      Employee employee = employees[i]
+      print("\nPlease enter the hours worked for next employee > ");
+
+      while(keepGoing) {
+        hours = scan.nextLine();
+        try {
+          hours = Integer.parseInt(hours);
+        }
+        catch(NumberFormatException nfe) {
+
+        }
+
+      }
+    }
+
 
   }
 
@@ -152,19 +159,8 @@ public class Driver {
       print("\n");
       for (int i = 0; i < 4; i++) {
         Employee employee = employees[i];
-        if(employee.getJobId() == "1") {
-          ((PharmacyManager)employee).setPaycheck(hoursWorked);
-          ((PharmacyManager)employee).printPaycheck();
-        } else if(employee.getJobId() == "2") {
-          ((Pharmacist)employee).setPaycheck(hoursWorked);
-          ((Pharmacist)employee).printPaycheck();
-        } else if(employee.getJobId() == "3") {
-          ((Technician)employee).setPaycheck(hoursWorked);
-          ((Technician)employee).printPaycheck();
-        } else if(employee.getJobId() == "4") {
-          ((SeniorTechnician)employee).setPaycheck(hoursWorked);
-          ((SeniorTechnician)employee).printPaycheck();
-        }
+        employee.setPaycheck();
+        employee.printPaycheck();
       }
     }
   }

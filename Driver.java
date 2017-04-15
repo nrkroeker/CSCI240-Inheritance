@@ -123,15 +123,7 @@ public class Driver {
     print("\n");
     for (int i = 0; i < 4; i++) {
       Employee employee = employees[i];
-      if(employee.getJobId() == "1") {
-        ((PharmacyManager)employee).printEmployee();
-      } else if(employee.getJobId() == "2") {
-        ((Pharmacist)employee).printEmployee();
-      } else if(employee.getJobId() == "3") {
-        ((Technician)employee).printEmployee();
-      } else if(employee.getJobId() == "4") {
-        ((SeniorTechnician)employee).printEmployee();
-      }
+      employee.printEmployee();
     }
   }
 
@@ -152,19 +144,8 @@ public class Driver {
       print("\n");
       for (int i = 0; i < 4; i++) {
         Employee employee = employees[i];
-        if(employee.getJobId() == "1") {
-          ((PharmacyManager)employee).setPaycheck(hoursWorked);
-          ((PharmacyManager)employee).printPaycheck();
-        } else if(employee.getJobId() == "2") {
-          ((Pharmacist)employee).setPaycheck(hoursWorked);
-          ((Pharmacist)employee).printPaycheck();
-        } else if(employee.getJobId() == "3") {
-          ((Technician)employee).setPaycheck(hoursWorked);
-          ((Technician)employee).printPaycheck();
-        } else if(employee.getJobId() == "4") {
-          ((SeniorTechnician)employee).setPaycheck(hoursWorked);
-          ((SeniorTechnician)employee).printPaycheck();
-        }
+        employee.setPaycheck(hoursWorked);
+        employee.printPaycheck();
       }
     }
   }
