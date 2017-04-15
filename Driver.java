@@ -39,7 +39,7 @@ public class Driver {
         print("\nEmployees loaded from file\n");
         keepGoing = false;
       } else if (menuInput == '2') {
-        print("Exiting...");
+        print("Exiting...\n");
         return 0;
       } else {
         print("\nPlease select a valid input.\n");
@@ -61,7 +61,7 @@ public class Driver {
       } else if (menuInput == '3') {
         printPaychecks();
       } else if (menuInput == '4') {
-        print("Exiting...");
+        print("Exiting...\n");
         keepGoing = false;
       } else {
         print("\nPlease select a valid input.\n");
