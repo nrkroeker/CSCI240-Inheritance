@@ -13,6 +13,9 @@ public class Employee {
 	private String jobTitle;
 	private String jobDescription;
 
+	// Enables setting individual hours worked
+	private int hoursWorked;
+
 	Employee() {
 
 	}
@@ -53,6 +56,10 @@ public class Employee {
 		return jobDescription;
 	}
 
+	public int getHoursWorked() {
+		return hoursWorked;
+	}
+
 	//====================================================================//
 
 	// Setters
@@ -77,8 +84,8 @@ public class Employee {
 		payRate = newPayRate;
 	}
 
-	public void setPaycheck(int hours) {
-    paycheck = payRate * hours;
+	public void setPaycheck() {
+    paycheck = payRate * hoursWorked;
   }
 
 	public void setJobTitle(String newJobTitle) {
@@ -87,6 +94,10 @@ public class Employee {
 
 	public void setJobDescription(String newJobDescription) {
 		jobDescription = newJobDescription;
+	}
+
+	public void setHoursWorked(int newHoursWorked) {
+		hoursWorked = newHoursWorked;
 	}
 
 	//====================================================================//

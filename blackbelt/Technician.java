@@ -18,7 +18,6 @@ public class Technician extends Employee {
     super.setEmployeeId(employeeIdIn);
     super.setFirstName(firstNameIn);
     super.setLastName(lastNameIn);
-
   }
 
 }
