@@ -23,7 +23,7 @@ public class Driver {
   }
 
   // Menus setup
-  public void menu() {
+  public int menu() {
     boolean keepGoing = true;
 
     // Menu options
@@ -40,7 +40,7 @@ public class Driver {
         keepGoing = false;
       } else if (menuInput == '2') {
         print("Exiting...");
-        keepGoing = false;
+        return 0;
       } else {
         print("\nPlease select a valid input.\n");
       }
@@ -67,6 +67,7 @@ public class Driver {
         print("\nPlease select a valid input.\n");
       }
     }
+    return 0;
   }
 
   // Function to read the data in from the file
