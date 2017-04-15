@@ -7,6 +7,8 @@ public class Driver {
   // Declare variables
   public Employee [] employees = new Employee[4];
   public char menuInput;
+  String hours;
+  int hoursWorked;
 
   // Function for easy printing
   public void print(String phrase) {
@@ -127,28 +129,29 @@ public class Driver {
   }
 
   public void submitHours() {
-    String hours;
     boolean keepGoing = true;
+
     // Recieve input of the hours worked
     Scanner scan = new Scanner(System.in);
 
     for (int i = 0; i < 4; i++) {
-      Employee employee = employees[i]
-      print("\nPlease enter the hours worked for next employee > ");
+      Employee employee = employees[i];
+      keepGoing = true;
 
       while(keepGoing) {
+        print("\nPlease enter the hours worked for " + employee.getFirstName() + " > ");
         hours = scan.nextLine();
+
         try {
-          hours = Integer.parseInt(hours);
+          hoursWorked = Integer.parseInt(hours);
+          keepGoing = false;
         }
         catch(NumberFormatException nfe) {
-
+          print("\nPlease enter correct type of input.\n");
         }
-
       }
+      employee.setHoursWorked(hoursWorked);
     }
-
-
   }
 
   // Check job id and print the paychecks
